@@ -2,7 +2,7 @@
 {
     public class Test
     {
-        public static string api = "https://admin.elogik.ro/api/StationSettings";
+        public static string api = "https://admin.elogik.ro/api/";
         
         //StationSettings
         public static string stationSettings = api + "StationSettings";
