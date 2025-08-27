@@ -11,7 +11,7 @@
         public static string orderHeaders = api + "Rechemare/date=2025-08-23&showAll=true";
 
         //OrderPayments(Plati) - by orderId - PaymentMethod 1 - Cash, 9 - Card
-        public static string orderPayments = api + "OrderPayments/orderId=";
+        public static string orderPayments = api + "OrderPayments/";  //orderId="; trebuie sa fac publish pentru asta
 
         //OrderTransactions(Tranzactii) - by orderId - TransactionStatus - 2 - Anulat, 1 - Valid
         public static string orderTransactions = api + "OrderTransactions/getOrderID=";
