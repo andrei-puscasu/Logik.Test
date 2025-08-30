@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Logik.Test.Models.SalesReportRow>
+@{
+    ViewData["Title"] = "Sales Report";
+}
+
+@if (ViewBag.ApiError != null)
+{
+    <div class="alert alert-danger">
+        <strong>API Error:</strong>
+        <pre>@ViewBag.ApiError</pre>
+    </div>
+}
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">No data available. The APIs may not be returning any data.</div>
+}
+else
+{
+    <h1>Sales Report combined with all requirements</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>StationId</th>
+                <th>TotalAmountPaidPerStation</th>
+                <th>PaymentType</th>
+                <th>AmountPaidByPaymentType</th>
+                <th>Vat %</th>
+                <th>Menu Item</th>
+                <th>Quantity</th>
+                <th>Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var row in Model)
+            {
+                <tr>
+                    <td>@row.StationId</td>
+                    <td>@row.TotalAmountPaidPerStation</td>
+                    <td>@row.PaymentType</td>
+                    <td>@row.AmountPaid</td>
+                    <td>@row.VatPercentage</td>
+                    <td>@row.MenuItemName</td>
+                    <td>@row.TotalQuantity</td>
+                    <td>@row.TotalAmount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
